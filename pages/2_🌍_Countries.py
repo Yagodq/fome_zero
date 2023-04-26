@@ -164,7 +164,7 @@ def unique_per_country( df1, col, label_name):
 #-------------------------------------------------------------------------------------------------
 #-------------------------------- Inicío da estrutura lógica do código ---------------------------
 #Lendo arquivo .csv, Importando Dataset
-df = pd.read_csv('dataset\zomato.csv')
+df = pd.read_csv('..\dataset\zomato.csv')
 
 #Cópia do dataframe original
 df1 = df.copy() 
