@@ -138,7 +138,7 @@ def create_map ( df1 ):
 #-------------------------------------------------------------------------------------------------
 #-------------------------------- Inicío da estrutura lógica do código ---------------------------
 #Lendo arquivo .csv, Importando Dataset
-df = pd.read_csv('dataset\zomato.csv')
+df = pd.read_csv('zomato.csv')
 
 #Cópia do dataframe original
 df1 = df.copy() 
