@@ -165,13 +165,14 @@ st.sidebar.markdown( """___""")
 st.sidebar.markdown( '## Filtros:')
 country_options = st.sidebar.multiselect('Escolha os Paises que Deseja visualizar as Informações:',
     df1.loc[:,'country'].unique().tolist(),
-    default=df1.loc[:,'country'].unique().tolist())
+    default=["Brazil", "England", "Qatar", "South Africa", "Canada", "Australia"])
 st.sidebar.markdown( """___""")
 
-#Filtro de país
+#Filtro de país - Apenas para o mapa
+#Metricas são estáticas
 #Usado o comando isin, passando que as opções do filtro estão em algum lugar
 linhas_selecionadas = df1['country'].isin( country_options )
-df1 = df1.loc[linhas_selecionadas, :]
+map_df = df1.loc[linhas_selecionadas, :]
 
 #=========================================================
 #Layout Streamlit
@@ -208,7 +209,7 @@ with st.container():
 st.markdown( """___""")
 
 with st.container():
-    map = create_map ( df1)
+    map = create_map ( map_df )
     #Comando para exibição de mapa no Streamlit
     folium_static( map, width=1024, height=768)
 
